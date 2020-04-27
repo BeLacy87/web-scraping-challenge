@@ -1,6 +1,9 @@
+import pandas as pd
+import pymongo
+import requests
+
+from bs4 import BeautifulSoup
 from splinter import Browser
-from bs4 import BeautifulSoup as bs
-import time
 
 
 def init_browser():
@@ -10,9 +13,17 @@ def init_browser():
     
 
 def scrape_info():
+    #pulls headline and news
     browser = init_browser()
-
-
+    url='https://mars.nasa.gov/news/'
+    browser.visit(url)
+    html = browser.html
+    soup = BeautifulSoup(html, 'html.parser')
+    article = soup.find('li', class_='slide')
+    news_title=article.find('h3').text
+    news_p=article.find('div',class_='article_teaser_body').text
+    print(news_title,news_p)
+    browser.quit()
 
 
 
@@ -20,13 +31,13 @@ def scrape_info():
     mars_data = {
         "news_title": news_title,
         "news_p": news_p,
-        "featured_image_url": featured_image_url,
-        "mars_weather" : mars_weather,
-        "table_code": table_code
+        # "featured_image_url": featured_image_url,
+        # "mars_weather" : mars_weather,
+        # "table_code": table_code
     }
 
     # Close the browser after scraping
-    browser.quit()
+   
 
     # Return results
-    return costa_data
+    return mars_data
