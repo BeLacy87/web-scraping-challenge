@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Costa Rica Weather</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Data!</a></p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>{{mars.news_title}}</h2>          
+        </div>
+      </div>
+      <div class="row">
+        {{mars.news_p}}
+      </div>
+    </div>
+    <div class="container pt-5">
+      <div class = "row">
+        <div class = "col-md-7 bg-light text-dark">
+          <div class="mb-4 mt-4">
+            <h2 >Featured Mars Image</h2>
+          </div>
+          <hr>
+          <div>
+            <img id="landing-image" src={{mars.featured_image_url}} alt="featured_mars_image">
+          </div>
+        </div>  
+        <div class= "col-md-4 offset-md-1 bg-light text-dark h-100">
+          <div class="mb-4 mt-4">
+            <h3 >Current Weather on Mars</h3>
+            {{mars.mars_weather}}
+          </div>
+          <div class="row justify-content-center">
+            <h3>Mars Facts</h3>           
+          </div>
+          <div class="row justify-content-center">
+           {{mars.table_code}}
+          </div>            
+        </div>  
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col">
+          <h2>Mars Hemispheres</h2>
+        </div>
+      </div>   
+      <div class="row justify-content-center">        
+        <img class="m-4" src="{{mars.image_1}}" alt="cerberus_hem" >                
+        <img class="m-4" src="{{mars.image_2}}" alt="schiaparelli_hem">
+      </div>
+      <div class="row justify-content-center">        
+        <img class="m-4" src="{{mars.image_3}}" alt="syrtis_major_hem" >      
+        <img class="m-4" src="{{mars.image_4}}" alt="valles_marineris_hem">        
+      </div>        
+    </div>
+  </div>
+    
+</body>
+
+</html>
