@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Costa Rica Weather</title>
+  <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
 </head>
 <body>
   <div class="container-fluid">
@@ -17,11 +18,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2>{{mars.news_title}}</h2>          
+          <h2>Latest Mars News</h2> 
+          <h4>{{mars.news_title}}</h4>          
         </div>
       </div>
       <div class="row">
-        {{mars.news_p}}
+        <div class="col-md-12">
+          {{mars.news_p}}
+        </div>
       </div>
     </div>
     <div class="container pt-5">
@@ -31,20 +35,26 @@
             <h2 >Featured Mars Image</h2>
           </div>
           <hr>
-          <div>
-            <img id="landing-image" src={{mars.featured_image_url}} alt="featured_mars_image">
+          <div>    
+            <img src={{mars.featured_image_url}} alt="featured_mars_image" width="600px" >
           </div>
         </div>  
-        <div class= "col-md-4 offset-md-1 bg-light text-dark h-100">
-          <div class="mb-4 mt-4">
-            <h3 >Current Weather on Mars</h3>
-            {{mars.mars_weather}}
+        <div class= "col-md-4 offset-md-1 bg-light text-dark h-100 " >
+          <div class="row panel panel-default" id="twitter" style="margin-top: 20px;" >
+            <div class="panel-heading">                      
+              <h3>Current Weather on Mars</h3>
+            </div> 
+            <div class="panel-body">
+              {{mars.mars_weather}} 
+            </div>                      
           </div>
           <div class="row justify-content-center">
             <h3>Mars Facts</h3>           
           </div>
           <div class="row justify-content-center">
-           {{mars.table_code}}
+           
+             {{mars.table_code|safe}}
+          
           </div>            
         </div>  
       </div>
@@ -54,15 +64,16 @@
         <div class="col">
           <h2>Mars Hemispheres</h2>
         </div>
+        <div class="row justify-content-center">        
+          <img class="col-md-6" src="{{mars.hemisphere_image_urls[0]['img_url']}}" alt="alt_text" width="500px" style="margin-bottom: 20px;">            
+          <img class="col-md-6" src="{{mars.hemisphere_image_urls[1]['img_url_2']}}" alt="alt_text" width="500px" style="margin-bottom: 20px;">
+        </div>
+        <div class="row justify-content-center">        
+          <img class="col-md-6" src="{{mars.hemisphere_image_urls[2]['img_url_3']}}" alt="alt_text" width="500px" >      
+          <img class="col-md-6" src="{{mars.hemisphere_image_urls[3]['img_url_4']}}" alt="alt_text"  width="500px">        
+        </div>        
       </div>   
-      <div class="row justify-content-center">        
-        <img class="m-4" src="{{mars.image_1}}" alt="cerberus_hem" >                
-        <img class="m-4" src="{{mars.image_2}}" alt="schiaparelli_hem">
-      </div>
-      <div class="row justify-content-center">        
-        <img class="m-4" src="{{mars.image_3}}" alt="syrtis_major_hem" >      
-        <img class="m-4" src="{{mars.image_4}}" alt="valles_marineris_hem">        
-      </div>        
+        
     </div>
   </div>
     
