@@ -4,7 +4,7 @@ Mission to Mars:  This scrapes info on Mars from many different websites and dis
 click here for a screen shot of the final product: [Screenshot](screenshot.png)
 
 This project utilizes PyMongo and BeautifulSoup to scrape the following websites for information on the planet Mars:
--https://mars.nasa.gov/news/
+-https://mars.nasa.gov/news/ /n
 -https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars
 -https://twitter.com/marswxreport?lang=en
 -https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars
